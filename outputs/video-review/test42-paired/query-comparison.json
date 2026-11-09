@@ -1,0 +1,129 @@
+[
+  {
+    "task_id": 0,
+    "initial_state": 10,
+    "full_queries": 38,
+    "adaptive_queries": 38,
+    "adaptive_token_histogram": {
+      "16": 38
+    },
+    "first_early_stop_query": null,
+    "first_action_difference_query": null,
+    "first_action_difference_max_abs": null,
+    "query_index_base": 0
+  },
+  {
+    "task_id": 1,
+    "initial_state": 11,
+    "full_queries": 38,
+    "adaptive_queries": 38,
+    "adaptive_token_histogram": {
+      "16": 36,
+      "12": 1,
+      "11": 1
+    },
+    "first_early_stop_query": 6,
+    "first_action_difference_query": 6,
+    "first_action_difference_max_abs": 0.015601038932800293,
+    "query_index_base": 0
+  },
+  {
+    "task_id": 1,
+    "initial_state": 19,
+    "full_queries": 38,
+    "adaptive_queries": 9,
+    "adaptive_token_histogram": {
+      "16": 8,
+      "12": 1
+    },
+    "first_early_stop_query": 4,
+    "first_action_difference_query": 4,
+    "first_action_difference_max_abs": 0.016237735748291016,
+    "query_index_base": 0
+  },
+  {
+    "task_id": 2,
+    "initial_state": 10,
+    "full_queries": 38,
+    "adaptive_queries": 38,
+    "adaptive_token_histogram": {
+      "16": 37,
+      "13": 1
+    },
+    "first_early_stop_query": 4,
+    "first_action_difference_query": 4,
+    "first_action_difference_max_abs": 0.021058320999145508,
+    "query_index_base": 0
+  },
+  {
+    "task_id": 4,
+    "initial_state": 10,
+    "full_queries": 11,
+    "adaptive_queries": 38,
+    "adaptive_token_histogram": {
+      "16": 36,
+      "12": 1,
+      "13": 1
+    },
+    "first_early_stop_query": 2,
+    "first_action_difference_query": 2,
+    "first_action_difference_max_abs": 0.006529808044433594,
+    "query_index_base": 0
+  },
+  {
+    "task_id": 4,
+    "initial_state": 31,
+    "full_queries": 38,
+    "adaptive_queries": 12,
+    "adaptive_token_histogram": {
+      "11": 2,
+      "16": 10
+    },
+    "first_early_stop_query": 0,
+    "first_action_difference_query": 0,
+    "first_action_difference_max_abs": 0.015315413475036621,
+    "query_index_base": 0
+  },
+  {
+    "task_id": 5,
+    "initial_state": 16,
+    "full_queries": 38,
+    "adaptive_queries": 15,
+    "adaptive_token_histogram": {
+      "16": 14,
+      "11": 1
+    },
+    "first_early_stop_query": 1,
+    "first_action_difference_query": 1,
+    "first_action_difference_max_abs": 0.021382808685302734,
+    "query_index_base": 0
+  },
+  {
+    "task_id": 6,
+    "initial_state": 21,
+    "full_queries": 13,
+    "adaptive_queries": 38,
+    "adaptive_token_histogram": {
+      "12": 2,
+      "16": 36
+    },
+    "first_early_stop_query": 0,
+    "first_action_difference_query": 0,
+    "first_action_difference_max_abs": 0.016581416130065918,
+    "query_index_base": 0
+  },
+  {
+    "task_id": 8,
+    "initial_state": 12,
+    "full_queries": 16,
+    "adaptive_queries": 38,
+    "adaptive_token_histogram": {
+      "16": 33,
+      "11": 5
+    },
+    "first_early_stop_query": 4,
+    "first_action_difference_query": 4,
+    "first_action_difference_max_abs": 0.016890287399291992,
+    "query_index_base": 0
+  }
+]

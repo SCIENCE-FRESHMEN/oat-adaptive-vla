@@ -1,0 +1,93 @@
+{
+  "label": "ablation-threshold-2.0",
+  "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+  "episodes": 300,
+  "success_rate": 0.4633333333333333,
+  "per_task": {
+    "0": 0.06666666666666667,
+    "1": 0.9333333333333333,
+    "2": 0.5333333333333333,
+    "3": 0.0,
+    "4": 0.9666666666666667,
+    "5": 0.1,
+    "6": 0.23333333333333334,
+    "7": 0.9333333333333333,
+    "8": 0.6,
+    "9": 0.26666666666666666
+  },
+  "offset": 10,
+  "count": 30,
+  "threshold": 0.02,
+  "budget": null,
+  "environment_seed": 20261102,
+  "GPU": "0",
+  "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA A100 80GB PCIe, <gpu-instance>, 580.126.20, 81920 MiB\n",
+  "warmup_queries_excluded": 10,
+  "evidence": {
+    "episodes": 300,
+    "queries": 7807,
+    "paired_states_verified": true,
+    "actual_controller_actions_verified": true,
+    "input_observations_verified": true,
+    "videos_required": true
+  },
+  "chunk_decode_ms": {
+    "mean": 861.120762475952,
+    "p50": 837.3284386470914,
+    "p95": 1020.0071472674608
+  },
+  "generation_ms": {
+    "mean": 853.063229014802,
+    "p50": 829.1465220972896,
+    "p95": 1011.9513818994164
+  },
+  "prefix_decoder_ms": {
+    "mean": 58.54764227177606,
+    "p50": 58.64599160850048,
+    "p95": 67.61176288127899
+  },
+  "final_decoder_ms": {
+    "mean": 4.737907822334768,
+    "p50": 4.719286225736141,
+    "p95": 4.781648702919483
+  },
+  "tokens": {
+    "mean": 13.519687059125305,
+    "p50": 13.0,
+    "p95": 16.0
+  },
+  "blocks": {
+    "mean": 13.519687059125305,
+    "p50": 13.0,
+    "p95": 16.0
+  },
+  "vlm_forwards": {
+    "mean": 13.519687059125305,
+    "p50": 13.0,
+    "p95": 16.0
+  },
+  "prefix_decoder_calls": {
+    "mean": 13.060792612543286,
+    "p50": 13.0,
+    "p95": 15.0
+  },
+  "token_histogram": {
+    "16": 3586,
+    "11": 2247,
+    "13": 544,
+    "12": 721,
+    "10": 299,
+    "15": 119,
+    "14": 97,
+    "5": 3,
+    "9": 148,
+    "8": 4,
+    "6": 39
+  },
+  "environment_step_ms": {
+    "mean": 14.88268475599228,
+    "p50": 14.225536957383156,
+    "p95": 18.402080051600933
+  },
+  "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+}

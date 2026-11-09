@@ -1,0 +1,114 @@
+{
+  "1": {
+    "translation_rmse": 0.15430736400467765,
+    "rotation_rmse": 0.04382841622713202,
+    "action_mse": 0.01408755002559961,
+    "gripper_error": 0.0070703125,
+    "action_steps": 51200
+  },
+  "2": {
+    "translation_rmse": 0.11429362534944755,
+    "rotation_rmse": 0.03729734749766205,
+    "action_mse": 0.007803078723435257,
+    "gripper_error": 0.00365234375,
+    "action_steps": 51200
+  },
+  "3": {
+    "translation_rmse": 0.10985883995545141,
+    "rotation_rmse": 0.03762056591172831,
+    "action_mse": 0.007223564428942544,
+    "gripper_error": 0.00318359375,
+    "action_steps": 51200
+  },
+  "4": {
+    "translation_rmse": 0.10298622044341936,
+    "rotation_rmse": 0.034754690558002996,
+    "action_mse": 0.006281382158631459,
+    "gripper_error": 0.0026171875,
+    "action_steps": 51200
+  },
+  "5": {
+    "translation_rmse": 0.10386091660811884,
+    "rotation_rmse": 0.03447980692528707,
+    "action_mse": 0.006801842742903059,
+    "gripper_error": 0.00369140625,
+    "action_steps": 51200
+  },
+  "6": {
+    "translation_rmse": 0.10318487528410038,
+    "rotation_rmse": 0.034036625019961235,
+    "action_mse": 0.0066202334920568056,
+    "gripper_error": 0.00326171875,
+    "action_steps": 51200
+  },
+  "7": {
+    "translation_rmse": 0.10058368384821062,
+    "rotation_rmse": 0.03328185166092163,
+    "action_mse": 0.005905265755032555,
+    "gripper_error": 0.00232421875,
+    "action_steps": 51200
+  },
+  "8": {
+    "translation_rmse": 0.0944049667591983,
+    "rotation_rmse": 0.032473032594122715,
+    "action_mse": 0.005115487336380674,
+    "gripper_error": 0.0018359375,
+    "action_steps": 51200
+  },
+  "9": {
+    "translation_rmse": 0.09389122499652988,
+    "rotation_rmse": 0.03240685185657705,
+    "action_mse": 0.0049960474011355215,
+    "gripper_error": 0.00166015625,
+    "action_steps": 51200
+  },
+  "10": {
+    "translation_rmse": 0.09365446956686062,
+    "rotation_rmse": 0.032351490848171044,
+    "action_mse": 0.004965920038147098,
+    "gripper_error": 0.00162109375,
+    "action_steps": 51200
+  },
+  "11": {
+    "translation_rmse": 0.0933514497938156,
+    "rotation_rmse": 0.03229372378580848,
+    "action_mse": 0.0049412849150290376,
+    "gripper_error": 0.00162109375,
+    "action_steps": 51200
+  },
+  "12": {
+    "translation_rmse": 0.0931266521370909,
+    "rotation_rmse": 0.032231002168258215,
+    "action_mse": 0.004926371081840313,
+    "gripper_error": 0.0016015625,
+    "action_steps": 51200
+  },
+  "13": {
+    "translation_rmse": 0.09284097972656188,
+    "rotation_rmse": 0.03217160318558956,
+    "action_mse": 0.004909257263040802,
+    "gripper_error": 0.0016015625,
+    "action_steps": 51200
+  },
+  "14": {
+    "translation_rmse": 0.09259036392935578,
+    "rotation_rmse": 0.03211885626506491,
+    "action_mse": 0.0049026057134947875,
+    "gripper_error": 0.00169921875,
+    "action_steps": 51200
+  },
+  "15": {
+    "translation_rmse": 0.09233120116072524,
+    "rotation_rmse": 0.03211496587524885,
+    "action_mse": 0.004910169602205445,
+    "gripper_error": 0.00181640625,
+    "action_steps": 51200
+  },
+  "16": {
+    "translation_rmse": 0.09235426903791451,
+    "rotation_rmse": 0.03213604147659591,
+    "action_mse": 0.004961022713125983,
+    "gripper_error": 0.0019140625,
+    "action_steps": 51200
+  }
+}

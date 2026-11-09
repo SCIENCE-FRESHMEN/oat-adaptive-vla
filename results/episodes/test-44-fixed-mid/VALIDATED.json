@@ -1,0 +1,83 @@
+{
+  "label": "test-44-fixed-mid",
+  "checkpoint": "outputs/policy-44/selection/step-5000/pretrained_model",
+  "episodes": 300,
+  "success_rate": 0.013333333333333334,
+  "per_task": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.13333333333333333,
+    "8": 0.0,
+    "9": 0.0
+  },
+  "offset": 10,
+  "count": 30,
+  "threshold": null,
+  "budget": 8,
+  "environment_seed": 20261102,
+  "GPU": "0",
+  "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA A100 80GB PCIe, <gpu-instance>, 580.126.20, 81920 MiB\n",
+  "warmup_queries_excluded": 10,
+  "evidence": {
+    "episodes": 300,
+    "queries": 11307,
+    "paired_states_verified": true,
+    "actual_controller_actions_verified": true,
+    "input_observations_verified": true,
+    "videos_required": true
+  },
+  "chunk_decode_ms": {
+    "mean": 484.9820114766825,
+    "p50": 484.73614174872637,
+    "p95": 489.3795231357217
+  },
+  "generation_ms": {
+    "mean": 476.72682479404807,
+    "p50": 476.58831626176834,
+    "p95": 481.07618410140276
+  },
+  "prefix_decoder_ms": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p95": 0.0
+  },
+  "final_decoder_ms": {
+    "mean": 4.992237802543128,
+    "p50": 4.957943223416805,
+    "p95": 5.062221735715866
+  },
+  "tokens": {
+    "mean": 8.0,
+    "p50": 8.0,
+    "p95": 8.0
+  },
+  "blocks": {
+    "mean": 8.0,
+    "p50": 8.0,
+    "p95": 8.0
+  },
+  "vlm_forwards": {
+    "mean": 8.0,
+    "p50": 8.0,
+    "p95": 8.0
+  },
+  "prefix_decoder_calls": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p95": 0.0
+  },
+  "token_histogram": {
+    "8": 11307
+  },
+  "environment_step_ms": {
+    "mean": 15.193299540744427,
+    "p50": 14.36273567378521,
+    "p95": 20.045899413526058
+  },
+  "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+}

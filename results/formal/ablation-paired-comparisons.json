@@ -1,0 +1,62 @@
+{
+  "reference-adaptive": {
+    "success_rate_difference": -0.04,
+    "paired_bootstrap_ci95": [
+      -0.11666666666666667,
+      0.03333333333333333
+    ],
+    "candidate_only_success": 21,
+    "candidate_only_failure": 33,
+    "paired_episodes": 300,
+    "bootstrap_samples": 5000,
+    "scope": "One fixed trained policy; resample task then paired state. Does not measure training-seed uncertainty.",
+    "multiplicity": "Exploratory sensitivity intervals, not adjusted for multiple comparisons.",
+    "reference": "reference-full",
+    "p50_latency_ratio": 1.0916284988375267
+  },
+  "no-gripper": {
+    "success_rate_difference": 0.01,
+    "paired_bootstrap_ci95": [
+      -0.043333333333333335,
+      0.06333333333333334
+    ],
+    "candidate_only_success": 25,
+    "candidate_only_failure": 22,
+    "paired_episodes": 300,
+    "bootstrap_samples": 5000,
+    "scope": "One fixed trained policy; resample task then paired state. Does not measure training-seed uncertainty.",
+    "multiplicity": "Exploratory sensitivity intervals, not adjusted for multiple comparisons.",
+    "reference": "reference-adaptive",
+    "p50_latency_ratio": 0.9895464653531711
+  },
+  "threshold-0.5": {
+    "success_rate_difference": 0.03,
+    "paired_bootstrap_ci95": [
+      -0.03,
+      0.09333333333333334
+    ],
+    "candidate_only_success": 33,
+    "candidate_only_failure": 24,
+    "paired_episodes": 300,
+    "bootstrap_samples": 5000,
+    "scope": "One fixed trained policy; resample task then paired state. Does not measure training-seed uncertainty.",
+    "multiplicity": "Exploratory sensitivity intervals, not adjusted for multiple comparisons.",
+    "reference": "reference-adaptive",
+    "p50_latency_ratio": 0.9919118379470232
+  },
+  "threshold-2.0": {
+    "success_rate_difference": 0.023333333333333334,
+    "paired_bootstrap_ci95": [
+      -0.05,
+      0.1
+    ],
+    "candidate_only_success": 36,
+    "candidate_only_failure": 29,
+    "paired_episodes": 300,
+    "bootstrap_samples": 5000,
+    "scope": "One fixed trained policy; resample task then paired state. Does not measure training-seed uncertainty.",
+    "multiplicity": "Exploratory sensitivity intervals, not adjusted for multiple comparisons.",
+    "reference": "reference-adaptive",
+    "p50_latency_ratio": 0.8118114100346404
+  }
+}

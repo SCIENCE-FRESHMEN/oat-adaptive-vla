@@ -1,0 +1,1933 @@
+{
+  "main_rollouts": 4500,
+  "comparisons": {
+    "fixed-short": {
+      "success_difference": 0.017777777777777778,
+      "paired_hierarchical_bootstrap_95ci": [
+        -0.03888888888888889,
+        0.0711111111111111
+      ],
+      "per_seed_difference": [
+        0.02,
+        0.0033333333333333335,
+        0.03
+      ],
+      "p50_latency_ratio_per_seed": [
+        0.2740028154265515,
+        0.27452316104172764,
+        0.27256983266218
+      ]
+    },
+    "fixed-mid": {
+      "success_difference": 0.01,
+      "paired_hierarchical_bootstrap_95ci": [
+        -0.04002777777777777,
+        0.06222222222222222
+      ],
+      "per_seed_difference": [
+        0.03666666666666667,
+        -0.016666666666666666,
+        0.01
+      ],
+      "p50_latency_ratio_per_seed": [
+        0.5216932561007099,
+        0.5121447166657344,
+        0.508837426934668
+      ]
+    },
+    "random": {
+      "success_difference": 0.014444444444444444,
+      "paired_hierarchical_bootstrap_95ci": [
+        -0.006666666666666667,
+        0.043333333333333335
+      ],
+      "per_seed_difference": [
+        0.03,
+        0.013333333333333334,
+        0.0
+      ],
+      "p50_latency_ratio_per_seed": [
+        0.9886512485012161,
+        0.9854320785230388,
+        0.9857014862481137
+      ]
+    },
+    "adaptive": {
+      "success_difference": 0.01888888888888889,
+      "paired_hierarchical_bootstrap_95ci": [
+        -0.004444444444444445,
+        0.05111111111111111
+      ],
+      "per_seed_difference": [
+        0.03666666666666667,
+        0.01,
+        0.01
+      ],
+      "p50_latency_ratio_per_seed": [
+        1.0901987423743493,
+        1.081714500499474,
+        1.0799777217470634
+      ]
+    }
+  },
+  "ablation_rollouts": 1500,
+  "ablation_comparisons": {
+    "reference-adaptive": {
+      "success_rate_difference": -0.04,
+      "paired_bootstrap_ci95": [
+        -0.11666666666666667,
+        0.03333333333333333
+      ],
+      "candidate_only_success": 21,
+      "candidate_only_failure": 33,
+      "paired_episodes": 300,
+      "bootstrap_samples": 5000,
+      "scope": "One fixed trained policy; resample task then paired state. Does not measure training-seed uncertainty.",
+      "multiplicity": "Exploratory sensitivity intervals, not adjusted for multiple comparisons.",
+      "reference": "reference-full",
+      "p50_latency_ratio": 1.0916284988375267
+    },
+    "no-gripper": {
+      "success_rate_difference": 0.01,
+      "paired_bootstrap_ci95": [
+        -0.043333333333333335,
+        0.06333333333333334
+      ],
+      "candidate_only_success": 25,
+      "candidate_only_failure": 22,
+      "paired_episodes": 300,
+      "bootstrap_samples": 5000,
+      "scope": "One fixed trained policy; resample task then paired state. Does not measure training-seed uncertainty.",
+      "multiplicity": "Exploratory sensitivity intervals, not adjusted for multiple comparisons.",
+      "reference": "reference-adaptive",
+      "p50_latency_ratio": 0.9895464653531711
+    },
+    "threshold-0.5": {
+      "success_rate_difference": 0.03,
+      "paired_bootstrap_ci95": [
+        -0.03,
+        0.09333333333333334
+      ],
+      "candidate_only_success": 33,
+      "candidate_only_failure": 24,
+      "paired_episodes": 300,
+      "bootstrap_samples": 5000,
+      "scope": "One fixed trained policy; resample task then paired state. Does not measure training-seed uncertainty.",
+      "multiplicity": "Exploratory sensitivity intervals, not adjusted for multiple comparisons.",
+      "reference": "reference-adaptive",
+      "p50_latency_ratio": 0.9919118379470232
+    },
+    "threshold-2.0": {
+      "success_rate_difference": 0.023333333333333334,
+      "paired_bootstrap_ci95": [
+        -0.05,
+        0.1
+      ],
+      "candidate_only_success": 36,
+      "candidate_only_failure": 29,
+      "paired_episodes": 300,
+      "bootstrap_samples": 5000,
+      "scope": "One fixed trained policy; resample task then paired state. Does not measure training-seed uncertainty.",
+      "multiplicity": "Exploratory sensitivity intervals, not adjusted for multiple comparisons.",
+      "reference": "reference-adaptive",
+      "p50_latency_ratio": 0.8118114100346404
+    }
+  },
+  "project_complete": false,
+  "pending_work": [
+    "Complete and verify paired visual failure review for training seed 44"
+  ],
+  "development_reviews": {
+    "44": {
+      "checkpoint": "outputs/policy-44/selection/step-5000/pretrained_model",
+      "steps": 5000,
+      "dev_success_rate": 0.0,
+      "retain_as_negative_result": true,
+      "episodes": 100,
+      "queries": 3800,
+      "reason": "All paired development states, inputs and actual controller commands passed evidence checks. Training and evaluation configs match seed 43 except seed and run paths. Retain the prespecified independent seed and training budget to avoid outcome-based exclusion. Root cause of poor policy performance remains unresolved."
+    }
+  },
+  "sampled_video_reviews": {
+    "42": {
+      "training_seed": 42,
+      "review_status": "sampled_contact_sheets_visually_reviewed",
+      "project_complete": false,
+      "formal_failure_analysis_complete": false,
+      "reviewed_pairs": 9,
+      "reviewed_videos": 18,
+      "selection": "Three pairs per outcome category; first available initial state from distinct tasks. Purposive qualitative sample, not representative.",
+      "method": "Human-readable visual inspection by assistant of eight evenly spaced frames from each saved rollout video, paired by identical task and initial state. No new simulation, no test-based tuning.",
+      "limitations": [
+        "Only seed42 reviewed so far; seed43/44 results still required.",
+        "Eight frames per video can miss brief contact, drops or releases; video lengths differ so sampled columns are not time aligned.",
+        "Success labels are environment outcomes, not independent visual proof of exact task geometry.",
+        "Associations between early stops and trajectory divergence do not identify the physical or learning root cause."
+      ],
+      "query_evidence": "outputs/video-review/test42-paired/query-comparison.json",
+      "cases": [
+        {
+          "task_id": 4,
+          "initial_state": 10,
+          "category": "adaptive_only_failure",
+          "observed_frames": "Full budget lifts and transfers the bowl to the cabinet top. Adaptive also lifts the bowl, then moves toward the upper/right edge of the camera view without a visible completed placement; the final location is occluded/out of view.",
+          "interpretation_with_uncertainty": "Transfer/final-placement failure; exact release/contact failure cannot be resolved.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": true,
+              "video": "outputs/formal-eval/test-42-full/media/libero_goal_4/eval_episode_0.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/4-10-0.jpg",
+              "decoded_frames": 85,
+              "sampled_video_frame_indices": [
+                0,
+                12,
+                24,
+                36,
+                48,
+                60,
+                72,
+                84
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-adaptive/media/libero_goal_4/eval_episode_0.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/4-10-1.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 6,
+          "initial_state": 21,
+          "category": "adaptive_only_failure",
+          "observed_frames": "Full budget moves the blue cream-cheese package toward the bowl and ends with a successful environment flag. Adaptive approaches the package and bowl but later moves away toward the cabinet; the package is not clearly visible in the last sampled frames.",
+          "interpretation_with_uncertainty": "Object acquisition/retention or placement remains uncertain because the object is occluded; do not label a drop without denser frames.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": true,
+              "video": "outputs/formal-eval/test-42-full/media/libero_goal_6/eval_episode_11.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/6-21-2.jpg",
+              "decoded_frames": 104,
+              "sampled_video_frame_indices": [
+                0,
+                15,
+                29,
+                44,
+                59,
+                74,
+                88,
+                103
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-adaptive/media/libero_goal_6/eval_episode_11.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/6-21-3.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 8,
+          "initial_state": 12,
+          "category": "adaptive_only_failure",
+          "observed_frames": "Both methods visibly lift and bring the bowl toward the plate. Full budget terminates successfully. Adaptive remains at the plate with the gripper near the bowl through late frames and reaches the episode cap.",
+          "interpretation_with_uncertainty": "Final placement/release or geometric acceptance failure is plausible; contact geometry is not established by sampled images.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": true,
+              "video": "outputs/formal-eval/test-42-full/media/libero_goal_8/eval_episode_2.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/8-12-4.jpg",
+              "decoded_frames": 127,
+              "sampled_video_frame_indices": [
+                0,
+                18,
+                36,
+                54,
+                72,
+                90,
+                108,
+                126
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-adaptive/media/libero_goal_8/eval_episode_2.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/8-12-5.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 1,
+          "initial_state": 19,
+          "category": "adaptive_recovered",
+          "observed_frames": "In full-budget frames the bowl remains on the table while the arm moves over/around the stove. Adaptive visibly lifts the bowl and carries it onto the stove before successful termination.",
+          "interpretation_with_uncertainty": "Full-budget acquisition/transfer did not complete in the sampled sequence; adaptive recovered this paired episode.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-full/media/libero_goal_1/eval_episode_9.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/1-19-6.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": true,
+              "video": "outputs/formal-eval/test-42-adaptive/media/libero_goal_1/eval_episode_9.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/1-19-7.jpg",
+              "decoded_frames": 67,
+              "sampled_video_frame_indices": [
+                0,
+                9,
+                19,
+                28,
+                38,
+                47,
+                57,
+                66
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 4,
+          "initial_state": 31,
+          "category": "adaptive_recovered",
+          "observed_frames": "Full budget moves over the cabinet while the bowl remains on the table. Adaptive visibly grasps/lifts the bowl and transfers it to the cabinet top.",
+          "interpretation_with_uncertainty": "Full-budget acquisition/transfer failure; adaptive recovered this paired episode.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-full/media/libero_goal_4/eval_episode_21.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/4-31-8.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": true,
+              "video": "outputs/formal-eval/test-42-adaptive/media/libero_goal_4/eval_episode_21.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/4-31-9.jpg",
+              "decoded_frames": 90,
+              "sampled_video_frame_indices": [
+                0,
+                13,
+                25,
+                38,
+                51,
+                64,
+                76,
+                89
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 5,
+          "initial_state": 16,
+          "category": "adaptive_recovered",
+          "observed_frames": "Both sequences interact with and move the plate. Full budget continues manipulating it and visibly tilts it in late frames before the cap. Adaptive terminates earlier with the environment success flag after moving the plate toward the stove-front region.",
+          "interpretation_with_uncertainty": "Plate placement/contact trajectory differs; exact success-region geometry and force mechanism cannot be inferred from these frames.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-full/media/libero_goal_5/eval_episode_6.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/5-16-10.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": true,
+              "video": "outputs/formal-eval/test-42-adaptive/media/libero_goal_5/eval_episode_6.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/5-16-11.jpg",
+              "decoded_frames": 116,
+              "sampled_video_frame_indices": [
+                0,
+                16,
+                33,
+                49,
+                66,
+                82,
+                99,
+                115
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 0,
+          "initial_state": 10,
+          "category": "both_failed",
+          "observed_frames": "Both methods show the same sampled approach to the cabinet handle and sustained near-handle poses; no clearly completed drawer opening is visible by the final frame.",
+          "interpretation_with_uncertainty": "Shared baseline drawer-opening failure; query traces show no early stops and no planned-action difference above 1e-5.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-full/media/libero_goal_0/eval_episode_0.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/0-10-12.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-adaptive/media/libero_goal_0/eval_episode_0.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/0-10-13.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 1,
+          "initial_state": 11,
+          "category": "both_failed",
+          "observed_frames": "Both sequences move the arm toward/over the stove while the bowl remains on the table throughout the sampled frames.",
+          "interpretation_with_uncertainty": "Shared acquisition/transfer failure; adaptive's early stopping did not resolve it.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-full/media/libero_goal_1/eval_episode_1.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/1-11-14.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-adaptive/media/libero_goal_1/eval_episode_1.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/1-11-15.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 2,
+          "initial_state": 10,
+          "category": "both_failed",
+          "observed_frames": "Both sequences move toward the cabinet/right side while the bottle remains upright on the table in the sampled frames.",
+          "interpretation_with_uncertainty": "Shared acquisition/transfer failure; neither method visibly transports the target bottle.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-full/media/libero_goal_2/eval_episode_0.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/2-10-16.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-42-adaptive/media/libero_goal_2/eval_episode_0.mp4",
+              "contact_sheet": "outputs/video-review/test42-paired/2-10-17.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "43": {
+      "training_seed": 43,
+      "review_status": "sampled_contact_sheets_visually_reviewed",
+      "project_complete": false,
+      "formal_failure_analysis_complete": false,
+      "reviewed_pairs": 9,
+      "reviewed_videos": 18,
+      "selection": "Three pairs per outcome category; first available initial state from distinct tasks. Purposive qualitative sample, not representative.",
+      "method": "Assistant visually inspected eight evenly spaced frames of each paired saved video. No new simulation or test-based tuning.",
+      "limitations": [
+        "Seed44 and ablation results remain outstanding.",
+        "Eight sampled frames can miss brief contact or releases; videos have different lengths and columns are not time aligned.",
+        "Success flags are environment outcomes, not independent visual confirmation of precise geometry.",
+        "All nine sampled pairs first differ in planned actions at the first early stop, but this does not identify the physical root cause."
+      ],
+      "query_evidence": "outputs/video-review/test43-paired/query-comparison.json",
+      "cases": [
+        {
+          "task_id": 2,
+          "initial_state": 13,
+          "category": "adaptive_only_failure",
+          "observed_frames": "Full budget lifts the bottle and moves it to the cabinet top. Adaptive moves its arm over the cabinet while the bottle remains upright on the table in sampled frames.",
+          "interpretation_with_uncertainty": "Adaptive target acquisition/transfer did not complete; gripper alignment and contact cause are unresolved.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": true,
+              "video": "outputs/formal-eval/test-43-full/media/libero_goal_2/eval_episode_3.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/2-13-0.jpg",
+              "decoded_frames": 86,
+              "sampled_video_frame_indices": [
+                0,
+                12,
+                24,
+                36,
+                49,
+                61,
+                73,
+                85
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_2/eval_episode_3.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/2-13-1.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 3,
+          "initial_state": 13,
+          "category": "adaptive_only_failure",
+          "observed_frames": "Both methods visibly open the top drawer. Full budget subsequently lifts the bowl toward the open drawer and terminates successfully. Adaptive leaves the bowl outside the drawer in the final sampled frame after repeated approaches near the open drawer.",
+          "interpretation_with_uncertainty": "Drawer opening succeeded, but subsequent bowl acquisition/placement did not complete for adaptive. Occlusion prevents resolving brief contact or loss of grip.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": true,
+              "video": "outputs/formal-eval/test-43-full/media/libero_goal_3/eval_episode_3.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/3-13-2.jpg",
+              "decoded_frames": 199,
+              "sampled_video_frame_indices": [
+                0,
+                28,
+                57,
+                85,
+                113,
+                141,
+                170,
+                198
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_3/eval_episode_3.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/3-13-3.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 4,
+          "initial_state": 21,
+          "category": "adaptive_only_failure",
+          "observed_frames": "Full budget visibly lifts the bowl and carries it onto the cabinet. Adaptive approaches the bowl then moves over the cabinet while the bowl remains on the table through late sampled frames.",
+          "interpretation_with_uncertainty": "Adaptive acquisition/transfer failure; the physical cause is not established.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": true,
+              "video": "outputs/formal-eval/test-43-full/media/libero_goal_4/eval_episode_11.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/4-21-4.jpg",
+              "decoded_frames": 98,
+              "sampled_video_frame_indices": [
+                0,
+                14,
+                28,
+                42,
+                55,
+                69,
+                83,
+                97
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_4/eval_episode_11.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/4-21-5.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 1,
+          "initial_state": 13,
+          "category": "adaptive_recovered",
+          "observed_frames": "Full budget moves the arm toward and past the stove while the bowl stays on the table; the nearby blue package changes orientation. Adaptive visibly lifts the bowl onto the stove and terminates successfully.",
+          "interpretation_with_uncertainty": "Adaptive recovers acquisition/transfer. Incidental object interaction in full budget is visible, but force and precise contact are not resolved.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-full/media/libero_goal_1/eval_episode_3.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/1-13-6.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": true,
+              "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_1/eval_episode_3.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/1-13-7.jpg",
+              "decoded_frames": 80,
+              "sampled_video_frame_indices": [
+                0,
+                11,
+                23,
+                34,
+                45,
+                56,
+                68,
+                79
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 2,
+          "initial_state": 21,
+          "category": "adaptive_recovered",
+          "observed_frames": "Full budget initially lifts the bottle toward the cabinet, then returns downward and continues manipulating near the cabinet/table through the cap. Adaptive transports the bottle to the cabinet top and receives success.",
+          "interpretation_with_uncertainty": "Full-budget retention/final-placement difficulty is suggested; the exact final bottle pose is partially occluded and no definite drop mechanism is assigned.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-full/media/libero_goal_2/eval_episode_11.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/2-21-8.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": true,
+              "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_2/eval_episode_11.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/2-21-9.jpg",
+              "decoded_frames": 141,
+              "sampled_video_frame_indices": [
+                0,
+                20,
+                40,
+                60,
+                80,
+                100,
+                120,
+                140
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 4,
+          "initial_state": 11,
+          "category": "adaptive_recovered",
+          "observed_frames": "Full budget moves over the cabinet while the bowl remains on the table. Adaptive visibly lifts the bowl and transports it to the cabinet top.",
+          "interpretation_with_uncertainty": "Adaptive recovers an acquisition/transfer failure seen with full budget.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-full/media/libero_goal_4/eval_episode_1.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/4-11-10.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": true,
+              "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_4/eval_episode_1.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/4-11-11.jpg",
+              "decoded_frames": 91,
+              "sampled_video_frame_indices": [
+                0,
+                13,
+                26,
+                39,
+                51,
+                64,
+                77,
+                90
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 0,
+          "initial_state": 10,
+          "category": "both_failed",
+          "observed_frames": "Both methods approach the cabinet handle and remain close to it through the cap; no clearly completed middle-drawer opening is visible.",
+          "interpretation_with_uncertainty": "Shared drawer-opening failure despite some adaptive early stops; exact handle contact cannot be resolved.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-full/media/libero_goal_0/eval_episode_0.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/0-10-12.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_0/eval_episode_0.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/0-10-13.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 1,
+          "initial_state": 26,
+          "category": "both_failed",
+          "observed_frames": "Full budget leaves the bowl on the table while the arm travels toward and beyond the stove. Adaptive lifts the bowl and transports it left, but late frames show it beside the stove rather than successfully placed on it.",
+          "interpretation_with_uncertainty": "Different failure stages: full-budget acquisition/transfer versus adaptive final placement. Sampled frames do not establish a precise release mechanism.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-full/media/libero_goal_1/eval_episode_16.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/1-26-14.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_1/eval_episode_16.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/1-26-15.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        },
+        {
+          "task_id": 2,
+          "initial_state": 18,
+          "category": "both_failed",
+          "observed_frames": "Both sequences approach the bottle then move over and around the cabinet, while the bottle remains upright on the table in sampled frames.",
+          "interpretation_with_uncertainty": "Shared acquisition/transfer failure, not solely an adaptive-decoding failure.",
+          "evidence": [
+            {
+              "method": "full",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-full/media/libero_goal_2/eval_episode_8.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/2-18-16.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            },
+            {
+              "method": "adaptive",
+              "success": false,
+              "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_2/eval_episode_8.mp4",
+              "contact_sheet": "outputs/video-review/test43-paired/2-18-17.jpg",
+              "decoded_frames": 300,
+              "sampled_video_frame_indices": [
+                0,
+                43,
+                85,
+                128,
+                171,
+                214,
+                256,
+                299
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "evidence_status": "raw episodes, actual resets, query traces, input observations and video files verified",
+  "semantic_failure_review": "pending visual review for seeds: 44",
+  "weight_provenance": {
+    "42": {
+      "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+      "configured_training_seed": 42,
+      "steps": 5000,
+      "sha256": {
+        "model.safetensors": "7eca80a4c27e784a1e593875e667e8667c12196bd393be9e0ce266e8331b9968"
+      }
+    },
+    "43": {
+      "checkpoint": "outputs/policy-43/selection/step-5000/pretrained_model",
+      "configured_training_seed": 43,
+      "steps": 5000,
+      "sha256": {
+        "model.safetensors": "c636bd025f94c9103f7e0d282c2a7c3d61d87344607b62131cfc50b3d2e6d648"
+      }
+    },
+    "44": {
+      "checkpoint": "outputs/policy-44/selection/step-5000/pretrained_model",
+      "configured_training_seed": 44,
+      "steps": 5000,
+      "sha256": {
+        "model.safetensors": "85fd380f748033b471e339faf29a255757301437b8a54c9183b0e57b1c13cc04"
+      }
+    }
+  },
+  "success_per_method": {
+    "full": {
+      "mean": 0.2811111111111111,
+      "per_seed": [
+        0.4266666666666667,
+        0.41333333333333333,
+        0.0033333333333333335
+      ]
+    },
+    "fixed-short": {
+      "mean": 0.29888888888888887,
+      "per_seed": [
+        0.44666666666666666,
+        0.4166666666666667,
+        0.03333333333333333
+      ]
+    },
+    "fixed-mid": {
+      "mean": 0.2911111111111111,
+      "per_seed": [
+        0.4633333333333333,
+        0.39666666666666667,
+        0.013333333333333334
+      ]
+    },
+    "random": {
+      "mean": 0.29555555555555557,
+      "per_seed": [
+        0.45666666666666667,
+        0.4266666666666667,
+        0.0033333333333333335
+      ]
+    },
+    "adaptive": {
+      "mean": 0.3,
+      "per_seed": [
+        0.4633333333333333,
+        0.42333333333333334,
+        0.013333333333333334
+      ]
+    }
+  },
+  "training_gpu_hours": 17.164556708865696,
+  "codec_cpu_hours": 3.2162112740013336,
+  "failures": 670,
+  "calibration": {
+    "threshold": 0.01,
+    "short": 4,
+    "mid": 8,
+    "full": 16,
+    "chosen": {
+      "label": "calibration-adaptive-0.01",
+      "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+      "episodes": 100,
+      "success_rate": 0.48,
+      "per_task": {
+        "0": 0.3,
+        "1": 0.8,
+        "2": 0.6,
+        "3": 0.0,
+        "4": 0.7,
+        "5": 0.1,
+        "6": 0.3,
+        "7": 1.0,
+        "8": 0.7,
+        "9": 0.3
+      },
+      "offset": 0,
+      "count": 10,
+      "threshold": 0.01,
+      "budget": null,
+      "environment_seed": 20261102,
+      "GPU": "0",
+      "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+      "warmup_queries_excluded": 10,
+      "evidence": {
+        "episodes": 100,
+        "queries": 2571,
+        "paired_states_verified": true,
+        "actual_controller_actions_verified": true,
+        "input_observations_verified": true,
+        "videos_required": false
+      },
+      "chunk_decode_ms": {
+        "mean": 551.4107462199102,
+        "p50": 558.8328740559518,
+        "p95": 562.2684000991285
+      },
+      "generation_ms": {
+        "mean": 546.2863767293763,
+        "p50": 553.7777319550514,
+        "p95": 557.0780150592327
+      },
+      "prefix_decoder_ms": {
+        "mean": 38.49955387569874,
+        "p50": 38.92264561727643,
+        "p95": 39.20402517542243
+      },
+      "final_decoder_ms": {
+        "mean": 2.766386148683823,
+        "p50": 2.7707270346581936,
+        "p95": 2.806921023875475
+      },
+      "tokens": {
+        "mean": 15.762592737212026,
+        "p50": 16.0,
+        "p95": 16.0
+      },
+      "blocks": {
+        "mean": 15.762592737212026,
+        "p50": 16.0,
+        "p95": 16.0
+      },
+      "vlm_forwards": {
+        "mean": 15.762592737212026,
+        "p50": 16.0,
+        "p95": 16.0
+      },
+      "prefix_decoder_calls": {
+        "mean": 14.819601718078875,
+        "p50": 15.0,
+        "p95": 15.0
+      },
+      "token_histogram": {
+        "16": 2425,
+        "12": 38,
+        "11": 68,
+        "13": 32,
+        "14": 7,
+        "10": 1
+      },
+      "environment_step_ms": {
+        "mean": 8.401033887438915,
+        "p50": 8.09255801141262,
+        "p95": 10.458195814862844
+      },
+      "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+    },
+    "fixed": {
+      "full": {
+        "label": "calibration-full",
+        "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+        "episodes": 100,
+        "success_rate": 0.48,
+        "per_task": {
+          "0": 0.3,
+          "1": 0.8,
+          "2": 0.6,
+          "3": 0.0,
+          "4": 0.8,
+          "5": 0.1,
+          "6": 0.2,
+          "7": 1.0,
+          "8": 0.5,
+          "9": 0.5
+        },
+        "offset": 0,
+        "count": 10,
+        "threshold": null,
+        "budget": 16,
+        "environment_seed": 20261102,
+        "GPU": "0",
+        "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+        "warmup_queries_excluded": 10,
+        "evidence": {
+          "episodes": 100,
+          "queries": 2584,
+          "paired_states_verified": true,
+          "actual_controller_actions_verified": true,
+          "input_observations_verified": true,
+          "videos_required": false
+        },
+        "chunk_decode_ms": {
+          "mean": 527.712842559358,
+          "p50": 527.1195077802986,
+          "p95": 529.5961575582623
+        },
+        "generation_ms": {
+          "mean": 522.3284627623182,
+          "p50": 521.8617208302021,
+          "p95": 524.248789367266
+        },
+        "prefix_decoder_ms": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "final_decoder_ms": {
+          "mean": 2.9763350792941234,
+          "p50": 2.944627311080694,
+          "p95": 2.9991279589012265
+        },
+        "tokens": {
+          "mean": 16.0,
+          "p50": 16.0,
+          "p95": 16.0
+        },
+        "blocks": {
+          "mean": 16.0,
+          "p50": 16.0,
+          "p95": 16.0
+        },
+        "vlm_forwards": {
+          "mean": 16.0,
+          "p50": 16.0,
+          "p95": 16.0
+        },
+        "prefix_decoder_calls": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "token_histogram": {
+          "16": 2584
+        },
+        "environment_step_ms": {
+          "mean": 8.450930662762943,
+          "p50": 8.13580071553588,
+          "p95": 10.535371606238183
+        },
+        "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+      },
+      "fixed-short": {
+        "label": "calibration-fixed-short",
+        "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+        "episodes": 100,
+        "success_rate": 0.35,
+        "per_task": {
+          "0": 0.0,
+          "1": 0.8,
+          "2": 0.3,
+          "3": 0.0,
+          "4": 0.8,
+          "5": 0.1,
+          "6": 0.0,
+          "7": 1.0,
+          "8": 0.3,
+          "9": 0.2
+        },
+        "offset": 0,
+        "count": 10,
+        "threshold": null,
+        "budget": 4,
+        "environment_seed": 20261102,
+        "GPU": "0",
+        "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+        "warmup_queries_excluded": 10,
+        "evidence": {
+          "episodes": 100,
+          "queries": 2904,
+          "paired_states_verified": true,
+          "actual_controller_actions_verified": true,
+          "input_observations_verified": true,
+          "videos_required": false
+        },
+        "chunk_decode_ms": {
+          "mean": 144.50731857614778,
+          "p50": 144.17532552033663,
+          "p95": 145.13137857429683
+        },
+        "generation_ms": {
+          "mean": 139.21944571416967,
+          "p50": 138.92231043428183,
+          "p95": 139.857606892474
+        },
+        "prefix_decoder_ms": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "final_decoder_ms": {
+          "mean": 2.9818016025878142,
+          "p50": 2.968914806842804,
+          "p95": 3.000366478227079
+        },
+        "tokens": {
+          "mean": 4.0,
+          "p50": 4.0,
+          "p95": 4.0
+        },
+        "blocks": {
+          "mean": 4.0,
+          "p50": 4.0,
+          "p95": 4.0
+        },
+        "vlm_forwards": {
+          "mean": 4.0,
+          "p50": 4.0,
+          "p95": 4.0
+        },
+        "prefix_decoder_calls": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "token_histogram": {
+          "4": 2904
+        },
+        "environment_step_ms": {
+          "mean": 8.445212822727674,
+          "p50": 8.145226398482919,
+          "p95": 10.524435993283987
+        },
+        "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+      },
+      "fixed-mid": {
+        "label": "calibration-fixed-mid",
+        "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+        "episodes": 100,
+        "success_rate": 0.45,
+        "per_task": {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.3,
+          "3": 0.0,
+          "4": 1.0,
+          "5": 0.0,
+          "6": 0.0,
+          "7": 1.0,
+          "8": 1.0,
+          "9": 0.2
+        },
+        "offset": 0,
+        "count": 10,
+        "threshold": null,
+        "budget": 8,
+        "environment_seed": 20261102,
+        "GPU": "0",
+        "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+        "warmup_queries_excluded": 10,
+        "evidence": {
+          "episodes": 100,
+          "queries": 2572,
+          "paired_states_verified": true,
+          "actual_controller_actions_verified": true,
+          "input_observations_verified": true,
+          "videos_required": false
+        },
+        "chunk_decode_ms": {
+          "mean": 271.3815767790942,
+          "p50": 271.1014845408499,
+          "p95": 272.763536660932
+        },
+        "generation_ms": {
+          "mean": 266.08573906865206,
+          "p50": 265.84647432900965,
+          "p95": 267.4687908263877
+        },
+        "prefix_decoder_ms": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "final_decoder_ms": {
+          "mean": 2.973315874180065,
+          "p50": 2.9625394381582737,
+          "p95": 2.995116449892521
+        },
+        "tokens": {
+          "mean": 8.0,
+          "p50": 8.0,
+          "p95": 8.0
+        },
+        "blocks": {
+          "mean": 8.0,
+          "p50": 8.0,
+          "p95": 8.0
+        },
+        "vlm_forwards": {
+          "mean": 8.0,
+          "p50": 8.0,
+          "p95": 8.0
+        },
+        "prefix_decoder_calls": {
+          "mean": 0.0,
+          "p50": 0.0,
+          "p95": 0.0
+        },
+        "token_histogram": {
+          "8": 2572
+        },
+        "environment_step_ms": {
+          "mean": 8.482415774540733,
+          "p50": 8.137125987559557,
+          "p95": 10.55183564312756
+        },
+        "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+      }
+    },
+    "sweep": [
+      {
+        "label": "calibration-adaptive-0.003",
+        "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+        "episodes": 100,
+        "success_rate": 0.48,
+        "per_task": {
+          "0": 0.3,
+          "1": 0.8,
+          "2": 0.6,
+          "3": 0.0,
+          "4": 0.8,
+          "5": 0.1,
+          "6": 0.2,
+          "7": 1.0,
+          "8": 0.5,
+          "9": 0.5
+        },
+        "offset": 0,
+        "count": 10,
+        "threshold": 0.003,
+        "budget": null,
+        "environment_seed": 20261102,
+        "GPU": "0",
+        "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+        "warmup_queries_excluded": 10,
+        "evidence": {
+          "episodes": 100,
+          "queries": 2584,
+          "paired_states_verified": true,
+          "actual_controller_actions_verified": true,
+          "input_observations_verified": true,
+          "videos_required": false
+        },
+        "chunk_decode_ms": {
+          "mean": 564.166569307652,
+          "p50": 563.9658530708402,
+          "p95": 567.0911786844954
+        },
+        "generation_ms": {
+          "mean": 559.0544208685601,
+          "p50": 558.897454990074,
+          "p95": 561.968357837759
+        },
+        "prefix_decoder_ms": {
+          "mean": 39.124463647408604,
+          "p50": 39.04737369157374,
+          "p95": 39.28155559115112
+        },
+        "final_decoder_ms": {
+          "mean": 2.7872044640132274,
+          "p50": 2.784732496365905,
+          "p95": 2.819318789988756
+        },
+        "tokens": {
+          "mean": 15.998057498057499,
+          "p50": 16.0,
+          "p95": 16.0
+        },
+        "blocks": {
+          "mean": 15.998057498057499,
+          "p50": 16.0,
+          "p95": 16.0
+        },
+        "vlm_forwards": {
+          "mean": 15.998057498057499,
+          "p50": 16.0,
+          "p95": 16.0
+        },
+        "prefix_decoder_calls": {
+          "mean": 14.998445998445998,
+          "p50": 15.0,
+          "p95": 15.0
+        },
+        "token_histogram": {
+          "16": 2583,
+          "11": 1
+        },
+        "environment_step_ms": {
+          "mean": 8.453114680923472,
+          "p50": 8.142289007082582,
+          "p95": 10.571307106874883
+        },
+        "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+      },
+      {
+        "label": "calibration-adaptive-0.01",
+        "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+        "episodes": 100,
+        "success_rate": 0.48,
+        "per_task": {
+          "0": 0.3,
+          "1": 0.8,
+          "2": 0.6,
+          "3": 0.0,
+          "4": 0.7,
+          "5": 0.1,
+          "6": 0.3,
+          "7": 1.0,
+          "8": 0.7,
+          "9": 0.3
+        },
+        "offset": 0,
+        "count": 10,
+        "threshold": 0.01,
+        "budget": null,
+        "environment_seed": 20261102,
+        "GPU": "0",
+        "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+        "warmup_queries_excluded": 10,
+        "evidence": {
+          "episodes": 100,
+          "queries": 2571,
+          "paired_states_verified": true,
+          "actual_controller_actions_verified": true,
+          "input_observations_verified": true,
+          "videos_required": false
+        },
+        "chunk_decode_ms": {
+          "mean": 551.4107462199102,
+          "p50": 558.8328740559518,
+          "p95": 562.2684000991285
+        },
+        "generation_ms": {
+          "mean": 546.2863767293763,
+          "p50": 553.7777319550514,
+          "p95": 557.0780150592327
+        },
+        "prefix_decoder_ms": {
+          "mean": 38.49955387569874,
+          "p50": 38.92264561727643,
+          "p95": 39.20402517542243
+        },
+        "final_decoder_ms": {
+          "mean": 2.766386148683823,
+          "p50": 2.7707270346581936,
+          "p95": 2.806921023875475
+        },
+        "tokens": {
+          "mean": 15.762592737212026,
+          "p50": 16.0,
+          "p95": 16.0
+        },
+        "blocks": {
+          "mean": 15.762592737212026,
+          "p50": 16.0,
+          "p95": 16.0
+        },
+        "vlm_forwards": {
+          "mean": 15.762592737212026,
+          "p50": 16.0,
+          "p95": 16.0
+        },
+        "prefix_decoder_calls": {
+          "mean": 14.819601718078875,
+          "p50": 15.0,
+          "p95": 15.0
+        },
+        "token_histogram": {
+          "16": 2425,
+          "12": 38,
+          "11": 68,
+          "13": 32,
+          "14": 7,
+          "10": 1
+        },
+        "environment_step_ms": {
+          "mean": 8.401033887438915,
+          "p50": 8.09255801141262,
+          "p95": 10.458195814862844
+        },
+        "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+      },
+      {
+        "label": "calibration-adaptive-0.03",
+        "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+        "episodes": 100,
+        "success_rate": 0.44,
+        "per_task": {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.3,
+          "3": 0.0,
+          "4": 0.7,
+          "5": 0.1,
+          "6": 0.2,
+          "7": 0.9,
+          "8": 0.5,
+          "9": 0.7
+        },
+        "offset": 0,
+        "count": 10,
+        "threshold": 0.03,
+        "budget": null,
+        "environment_seed": 20261102,
+        "GPU": "0",
+        "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+        "warmup_queries_excluded": 10,
+        "evidence": {
+          "episodes": 100,
+          "queries": 2664,
+          "paired_states_verified": true,
+          "actual_controller_actions_verified": true,
+          "input_observations_verified": true,
+          "videos_required": false
+        },
+        "chunk_decode_ms": {
+          "mean": 424.7071920725999,
+          "p50": 399.69355263747275,
+          "p95": 571.9470304204151
+        },
+        "generation_ms": {
+          "mean": 419.6218658521485,
+          "p50": 394.66092456132174,
+          "p95": 566.8144857278094
+        },
+        "prefix_decoder_ms": {
+          "mean": 30.518697692816847,
+          "p50": 29.073799727484584,
+          "p95": 39.65827361680567
+        },
+        "final_decoder_ms": {
+          "mean": 2.7318219763045035,
+          "p50": 2.7104057371616364,
+          "p95": 2.83516775816679
+        },
+        "tokens": {
+          "mean": 11.726450640542577,
+          "p50": 11.0,
+          "p95": 16.0
+        },
+        "blocks": {
+          "mean": 11.726450640542577,
+          "p50": 11.0,
+          "p95": 16.0
+        },
+        "vlm_forwards": {
+          "mean": 11.726450640542577,
+          "p50": 11.0,
+          "p95": 16.0
+        },
+        "prefix_decoder_calls": {
+          "mean": 11.55162019593067,
+          "p50": 11.0,
+          "p95": 15.0
+        },
+        "token_histogram": {
+          "16": 467,
+          "11": 1093,
+          "12": 244,
+          "15": 22,
+          "13": 143,
+          "10": 424,
+          "9": 129,
+          "14": 53,
+          "5": 20,
+          "7": 1,
+          "6": 46,
+          "4": 4,
+          "8": 8,
+          "3": 10
+        },
+        "environment_step_ms": {
+          "mean": 8.460429789027337,
+          "p50": 8.142563048750162,
+          "p95": 10.40991167537868
+        },
+        "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+      },
+      {
+        "label": "calibration-adaptive-0.1",
+        "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+        "episodes": 100,
+        "success_rate": 0.39,
+        "per_task": {
+          "0": 0.1,
+          "1": 0.5,
+          "2": 0.3,
+          "3": 0.0,
+          "4": 0.9,
+          "5": 0.1,
+          "6": 0.1,
+          "7": 1.0,
+          "8": 0.7,
+          "9": 0.2
+        },
+        "offset": 0,
+        "count": 10,
+        "threshold": 0.1,
+        "budget": null,
+        "environment_seed": 20261102,
+        "GPU": "0",
+        "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+        "warmup_queries_excluded": 10,
+        "evidence": {
+          "episodes": 100,
+          "queries": 2810,
+          "paired_states_verified": true,
+          "actual_controller_actions_verified": true,
+          "input_observations_verified": true,
+          "videos_required": false
+        },
+        "chunk_decode_ms": {
+          "mean": 236.29477183068437,
+          "p50": 220.9375728853047,
+          "p95": 361.1297029303387
+        },
+        "generation_ms": {
+          "mean": 231.2860687832082,
+          "p50": 212.99608168192208,
+          "p95": 356.14380531478673
+        },
+        "prefix_decoder_ms": {
+          "mean": 16.84077409545093,
+          "p50": 15.123584074899554,
+          "p95": 26.309010293334723
+        },
+        "final_decoder_ms": {
+          "mean": 2.6814732592486377,
+          "p50": 2.6794890873134136,
+          "p95": 2.707332489080727
+        },
+        "tokens": {
+          "mean": 6.395714285714286,
+          "p50": 5.0,
+          "p95": 10.0
+        },
+        "blocks": {
+          "mean": 6.395714285714286,
+          "p50": 5.0,
+          "p95": 10.0
+        },
+        "vlm_forwards": {
+          "mean": 6.395714285714286,
+          "p50": 5.0,
+          "p95": 10.0
+        },
+        "prefix_decoder_calls": {
+          "mean": 6.395714285714286,
+          "p50": 5.0,
+          "p95": 10.0
+        },
+        "token_histogram": {
+          "3": 454,
+          "9": 365,
+          "10": 406,
+          "11": 91,
+          "8": 249,
+          "4": 356,
+          "5": 588,
+          "6": 154,
+          "2": 5,
+          "7": 141,
+          "12": 1
+        },
+        "environment_step_ms": {
+          "mean": 8.337524956506394,
+          "p50": 8.017775136977434,
+          "p95": 10.294640716165304
+        },
+        "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+      },
+      {
+        "label": "calibration-adaptive-0.3",
+        "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+        "episodes": 100,
+        "success_rate": 0.44,
+        "per_task": {
+          "0": 0.0,
+          "1": 0.9,
+          "2": 0.4,
+          "3": 0.0,
+          "4": 0.9,
+          "5": 0.1,
+          "6": 0.0,
+          "7": 1.0,
+          "8": 0.7,
+          "9": 0.4
+        },
+        "offset": 0,
+        "count": 10,
+        "threshold": 0.3,
+        "budget": null,
+        "environment_seed": 20261102,
+        "GPU": "0",
+        "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+        "warmup_queries_excluded": 10,
+        "evidence": {
+          "episodes": 100,
+          "queries": 2682,
+          "paired_states_verified": true,
+          "actual_controller_actions_verified": true,
+          "input_observations_verified": true,
+          "videos_required": false
+        },
+        "chunk_decode_ms": {
+          "mean": 132.68278579385867,
+          "p50": 118.57726657763124,
+          "p95": 187.50953641720116
+        },
+        "generation_ms": {
+          "mean": 127.72152372646357,
+          "p50": 113.63366851583123,
+          "p95": 182.56260168273002
+        },
+        "prefix_decoder_ms": {
+          "mean": 8.955673335369642,
+          "p50": 7.904215017333627,
+          "p95": 13.105656788684428
+        },
+        "final_decoder_ms": {
+          "mean": 2.6606130504333776,
+          "p50": 2.6597443502396345,
+          "p95": 2.685941057279706
+        },
+        "tokens": {
+          "mean": 3.4098053892215567,
+          "p50": 3.0,
+          "p95": 5.0
+        },
+        "blocks": {
+          "mean": 3.4098053892215567,
+          "p50": 3.0,
+          "p95": 5.0
+        },
+        "vlm_forwards": {
+          "mean": 3.4098053892215567,
+          "p50": 3.0,
+          "p95": 5.0
+        },
+        "prefix_decoder_calls": {
+          "mean": 3.4098053892215567,
+          "p50": 3.0,
+          "p95": 5.0
+        },
+        "token_histogram": {
+          "2": 516,
+          "3": 1220,
+          "4": 357,
+          "5": 524,
+          "7": 4,
+          "6": 60,
+          "8": 1
+        },
+        "environment_step_ms": {
+          "mean": 8.38691403133175,
+          "p50": 8.0959377810359,
+          "p95": 10.219786548987031
+        },
+        "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+      },
+      {
+        "label": "calibration-adaptive-1.0",
+        "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+        "episodes": 100,
+        "success_rate": 0.41,
+        "per_task": {
+          "0": 0.0,
+          "1": 1.0,
+          "2": 0.3,
+          "3": 0.0,
+          "4": 0.9,
+          "5": 0.0,
+          "6": 0.1,
+          "7": 1.0,
+          "8": 0.5,
+          "9": 0.3
+        },
+        "offset": 0,
+        "count": 10,
+        "threshold": 1.0,
+        "budget": null,
+        "environment_seed": 20261102,
+        "GPU": "0",
+        "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+        "warmup_queries_excluded": 10,
+        "evidence": {
+          "episodes": 100,
+          "queries": 2727,
+          "paired_states_verified": true,
+          "actual_controller_actions_verified": true,
+          "input_observations_verified": true,
+          "videos_required": false
+        },
+        "chunk_decode_ms": {
+          "mean": 93.80782866592727,
+          "p50": 85.00667102634907,
+          "p95": 119.86085176467896
+        },
+        "generation_ms": {
+          "mean": 88.84609029427813,
+          "p50": 80.04364790394902,
+          "p95": 114.87996727228165
+        },
+        "prefix_decoder_ms": {
+          "mean": 6.02279914002132,
+          "p50": 5.356885027140379,
+          "p95": 8.000368904322386
+        },
+        "final_decoder_ms": {
+          "mean": 2.6903772734538856,
+          "p50": 2.6875422336161137,
+          "p95": 2.7146922424435616
+        },
+        "tokens": {
+          "mean": 2.256532940743467,
+          "p50": 2.0,
+          "p95": 3.0
+        },
+        "blocks": {
+          "mean": 2.256532940743467,
+          "p50": 2.0,
+          "p95": 3.0
+        },
+        "vlm_forwards": {
+          "mean": 2.256532940743467,
+          "p50": 2.0,
+          "p95": 3.0
+        },
+        "prefix_decoder_calls": {
+          "mean": 2.256532940743467,
+          "p50": 2.0,
+          "p95": 3.0
+        },
+        "token_histogram": {
+          "2": 2104,
+          "3": 565,
+          "5": 14,
+          "4": 43,
+          "6": 1
+        },
+        "environment_step_ms": {
+          "mean": 8.446970576210667,
+          "p50": 8.197746705263853,
+          "p95": 10.310313384979962
+        },
+        "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+      }
+    ],
+    "acceptable": true,
+    "random_distribution": {
+      "16": 0.9432127576818359,
+      "12": 0.014780241151302996,
+      "11": 0.026448852586542202,
+      "13": 0.012446518864255154,
+      "14": 0.0027226760015558148,
+      "10": 0.00038895371450797355
+    },
+    "frozen_using": "seed42 development initial states 0..9 only"
+  },
+  "statistical_method": "Paired bootstrap with training seed, task and initial state resampling; only 3 independent training seeds"
+}

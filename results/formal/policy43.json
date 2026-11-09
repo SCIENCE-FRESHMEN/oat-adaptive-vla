@@ -1,0 +1,6 @@
+{
+  "checkpoint": "outputs/policy-43/selection/step-5000/pretrained_model",
+  "steps": 5000,
+  "seed": 43,
+  "dev_success_rate": 0.42
+}

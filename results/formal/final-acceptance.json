@@ -1,0 +1,24 @@
+{
+  "status": "pending_visual_review",
+  "scope": "Technical artifact validation and recorded visual review; not user signoff",
+  "main_episodes": 4500,
+  "ablation_episodes": 1500,
+  "missing_visual_review_seeds": [
+    44
+  ],
+  "artifact_sha256": {
+    "summary.json": "81061cddfc578cddd39526ba004312063ebd863a642f8902f9313fcb8527e3a7",
+    "report.md": "02d092520064e379de3a29cda3873357699521c01c6abe9ac2cb06da9063d518",
+    "failure-analysis.md": "570c130e7fb991885eb8bfe37369657882dd2d8378d7c4a017ab983c374bc858",
+    "main-results.csv": "1c3b11c8372fbaca8336400c85514fac64f97f3e60b2852c996008a04e4929bb",
+    "ablation-results.csv": "99c467c99114184bb1b5e23874c1daea5a515194ded23e3d53b0e0840639625b",
+    "ablation-paired-comparisons.json": "8ad157781c7e903affdea7216e6a3e00ad672e8b47aafb6f1d996a143f010c74",
+    "weight-provenance.json": "21bfdbd7f0e0c91bdefdacc6d3e397e69bf5e7ba083ce407f4d2969a428e6150",
+    "success-latency.png": "b60f0c19c80561c6332bdc1f6df11fe14572f3d5ddd2d7d6557684a8e85dc59f",
+    "ablation-success-latency.png": "1a8a9ba983cb3deea44407b0875e84e8a54ae1bde1b711b32bc3d92028bf8202",
+    "threshold-sweep-dev.png": "835a6a10e50d9427cb3449c2ddb7b327c43b544a240d7c887753ceb23e2f2997",
+    "codec-prefix.png": "effa450828ea5e9deb55fc4b642cc5047841d28a79eef3a0d94f4fce55ae5357",
+    "test42-semantic-failure-review.json": "f47f60fe1fadc8d71d3d3544b8832f1f179cf579205b57d824a3cbcfd13f66ad",
+    "test43-semantic-failure-review.json": "2dd3b5957e536a4266d7a97fdde36e0bb1b831858df8c716d6fcb61c5b12621c"
+  }
+}

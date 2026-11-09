@@ -1,0 +1,83 @@
+{
+  "label": "test-42-fixed-mid",
+  "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+  "episodes": 300,
+  "success_rate": 0.4633333333333333,
+  "per_task": {
+    "0": 0.06666666666666667,
+    "1": 0.8333333333333334,
+    "2": 0.43333333333333335,
+    "3": 0.0,
+    "4": 0.9,
+    "5": 0.0,
+    "6": 0.16666666666666666,
+    "7": 1.0,
+    "8": 0.8333333333333334,
+    "9": 0.4
+  },
+  "offset": 10,
+  "count": 30,
+  "threshold": null,
+  "budget": 8,
+  "environment_seed": 20261102,
+  "GPU": "0",
+  "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+  "warmup_queries_excluded": 10,
+  "evidence": {
+    "episodes": 300,
+    "queries": 7685,
+    "paired_states_verified": true,
+    "actual_controller_actions_verified": true,
+    "input_observations_verified": true,
+    "videos_required": true
+  },
+  "chunk_decode_ms": {
+    "mean": 272.12548060882654,
+    "p50": 270.26534592732787,
+    "p95": 280.00800502486527
+  },
+  "generation_ms": {
+    "mean": 266.68968354282043,
+    "p50": 264.9548421613872,
+    "p95": 274.27616245113313
+  },
+  "prefix_decoder_ms": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p95": 0.0
+  },
+  "final_decoder_ms": {
+    "mean": 3.0417918676589326,
+    "p50": 2.985298167914152,
+    "p95": 3.2415918074548236
+  },
+  "tokens": {
+    "mean": 8.0,
+    "p50": 8.0,
+    "p95": 8.0
+  },
+  "blocks": {
+    "mean": 8.0,
+    "p50": 8.0,
+    "p95": 8.0
+  },
+  "vlm_forwards": {
+    "mean": 8.0,
+    "p50": 8.0,
+    "p95": 8.0
+  },
+  "prefix_decoder_calls": {
+    "mean": 0.0,
+    "p50": 0.0,
+    "p95": 0.0
+  },
+  "token_histogram": {
+    "8": 7685
+  },
+  "environment_step_ms": {
+    "mean": 8.519258975659882,
+    "p50": 8.199701551347971,
+    "p95": 10.59341486543417
+  },
+  "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+}

@@ -1,0 +1,35 @@
+{
+  "scope": "Development set only: seed 42, selected step 5000, full budget. Three of five available failed development video contact sheets reviewed. Not a representative estimate of failure frequencies and not an adaptive-versus-full comparison.",
+  "method": "Visual inspection of eight uniformly sampled frames per saved 300-frame rollout, indices [0,43,85,128,171,214,256,299]. Contact sheets cannot resolve brief contacts, grip force, or transient events between frames.",
+  "episodes": [
+    {
+      "task_id": 3,
+      "initial_state": 0,
+      "success": false,
+      "category": "drawer_opening_and_transfer_not_completed",
+      "observed": "The bowl remains on the table throughout sampled frames. The arm approaches and stays near the cabinet face; no completed drawer opening or bowl placement is visible by the final frame.",
+      "uncertainty": "Cannot distinguish handle alignment, contact force, or control oscillation from these sampled camera views.",
+      "sheet": "3-0-2.jpg"
+    },
+    {
+      "task_id": 2,
+      "initial_state": 0,
+      "success": false,
+      "category": "target_acquisition_or_transfer_not_completed",
+      "observed": "The upright wine bottle remains on the table in sampled frames while the arm moves toward the cabinet and right edge of the view. No bottle lift or placement on the cabinet is visible.",
+      "uncertainty": "The reason for leaving the target behind is unresolved; no causal claim about task understanding or gripper timing is supported.",
+      "sheet": "2-0-1.jpg"
+    },
+    {
+      "task_id": 6,
+      "initial_state": 0,
+      "success": false,
+      "category": "target_acquisition_or_transfer_not_completed",
+      "observed": "The arm approaches the package vicinity and later moves over the bowl. The blue cream-cheese package remains outside the bowl at the final sampled frame; the required transfer is not completed.",
+      "uncertainty": "Possible incidental object contact is visible but sampled frames do not establish which controller or grasp error caused the failure.",
+      "sheet": "6-0-4.jpg"
+    }
+  ],
+  "implications": "These cases show baseline manipulation failures are already present with all 16 decoding forwards. Later paired test-video review must distinguish inherited policy failures from errors introduced by adaptive stopping. No threshold, training budget, or test configuration was changed in response to these observations.",
+  "formal_failure_analysis_complete": false
+}

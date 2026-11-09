@@ -1,0 +1,89 @@
+{
+  "label": "test-43-adaptive",
+  "checkpoint": "outputs/policy-43/selection/step-5000/pretrained_model",
+  "episodes": 300,
+  "success_rate": 0.42333333333333334,
+  "per_task": {
+    "0": 0.0,
+    "1": 0.9333333333333333,
+    "2": 0.7666666666666667,
+    "3": 0.0,
+    "4": 0.7333333333333333,
+    "5": 0.16666666666666666,
+    "6": 0.0,
+    "7": 0.6333333333333333,
+    "8": 0.3333333333333333,
+    "9": 0.6666666666666666
+  },
+  "offset": 10,
+  "count": 30,
+  "threshold": 0.01,
+  "budget": null,
+  "environment_seed": 20261102,
+  "GPU": "0",
+  "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA L40S, <gpu-instance>, 580.126.20, 46068 MiB\n",
+  "warmup_queries_excluded": 10,
+  "evidence": {
+    "episodes": 300,
+    "queries": 8130,
+    "paired_states_verified": true,
+    "actual_controller_actions_verified": true,
+    "input_observations_verified": true,
+    "videos_required": true
+  },
+  "chunk_decode_ms": {
+    "mean": 540.2420760928355,
+    "p50": 563.7064995244145,
+    "p95": 567.7856331691146
+  },
+  "generation_ms": {
+    "mean": 535.0542398579098,
+    "p50": 558.6178135126829,
+    "p95": 562.5450601801276
+  },
+  "prefix_decoder_ms": {
+    "mean": 37.683180416819496,
+    "p50": 39.06738618388772,
+    "p95": 39.3633752129972
+  },
+  "final_decoder_ms": {
+    "mean": 2.79163682989299,
+    "p50": 2.7886186726391315,
+    "p95": 2.830070350319147
+  },
+  "tokens": {
+    "mean": 15.271305418719212,
+    "p50": 16.0,
+    "p95": 16.0
+  },
+  "blocks": {
+    "mean": 15.271305418719212,
+    "p50": 16.0,
+    "p95": 16.0
+  },
+  "vlm_forwards": {
+    "mean": 15.271305418719212,
+    "p50": 16.0,
+    "p95": 16.0
+  },
+  "prefix_decoder_calls": {
+    "mean": 14.436330049261084,
+    "p50": 15.0,
+    "p95": 15.0
+  },
+  "token_histogram": {
+    "16": 6790,
+    "12": 436,
+    "11": 691,
+    "13": 173,
+    "10": 30,
+    "14": 9,
+    "15": 1
+  },
+  "environment_step_ms": {
+    "mean": 8.357497277802834,
+    "p50": 8.199990727007389,
+    "p95": 9.879289008677006
+  },
+  "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+}

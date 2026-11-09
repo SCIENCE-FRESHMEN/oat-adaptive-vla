@@ -1,0 +1,9 @@
+{
+  "checkpoint": "outputs/policy-44/selection/step-5000/pretrained_model",
+  "steps": 5000,
+  "dev_success_rate": 0.0,
+  "retain_as_negative_result": true,
+  "episodes": 100,
+  "queries": 3800,
+  "reason": "All paired development states, inputs and actual controller commands passed evidence checks. Training and evaluation configs match seed 43 except seed and run paths. Retain the prespecified independent seed and training budget to avoid outcome-based exclusion. Root cause of poor policy performance remains unresolved."
+}

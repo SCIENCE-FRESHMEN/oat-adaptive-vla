@@ -1,0 +1,406 @@
+{
+  "training_seed": 43,
+  "review_status": "sampled_contact_sheets_visually_reviewed",
+  "project_complete": false,
+  "formal_failure_analysis_complete": false,
+  "reviewed_pairs": 9,
+  "reviewed_videos": 18,
+  "selection": "Three pairs per outcome category; first available initial state from distinct tasks. Purposive qualitative sample, not representative.",
+  "method": "Assistant visually inspected eight evenly spaced frames of each paired saved video. No new simulation or test-based tuning.",
+  "limitations": [
+    "Seed44 and ablation results remain outstanding.",
+    "Eight sampled frames can miss brief contact or releases; videos have different lengths and columns are not time aligned.",
+    "Success flags are environment outcomes, not independent visual confirmation of precise geometry.",
+    "All nine sampled pairs first differ in planned actions at the first early stop, but this does not identify the physical root cause."
+  ],
+  "query_evidence": "outputs/video-review/test43-paired/query-comparison.json",
+  "cases": [
+    {
+      "task_id": 2,
+      "initial_state": 13,
+      "category": "adaptive_only_failure",
+      "observed_frames": "Full budget lifts the bottle and moves it to the cabinet top. Adaptive moves its arm over the cabinet while the bottle remains upright on the table in sampled frames.",
+      "interpretation_with_uncertainty": "Adaptive target acquisition/transfer did not complete; gripper alignment and contact cause are unresolved.",
+      "evidence": [
+        {
+          "method": "full",
+          "success": true,
+          "video": "outputs/formal-eval/test-43-full/media/libero_goal_2/eval_episode_3.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/2-13-0.jpg",
+          "decoded_frames": 86,
+          "sampled_video_frame_indices": [
+            0,
+            12,
+            24,
+            36,
+            49,
+            61,
+            73,
+            85
+          ]
+        },
+        {
+          "method": "adaptive",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_2/eval_episode_3.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/2-13-1.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": 3,
+      "initial_state": 13,
+      "category": "adaptive_only_failure",
+      "observed_frames": "Both methods visibly open the top drawer. Full budget subsequently lifts the bowl toward the open drawer and terminates successfully. Adaptive leaves the bowl outside the drawer in the final sampled frame after repeated approaches near the open drawer.",
+      "interpretation_with_uncertainty": "Drawer opening succeeded, but subsequent bowl acquisition/placement did not complete for adaptive. Occlusion prevents resolving brief contact or loss of grip.",
+      "evidence": [
+        {
+          "method": "full",
+          "success": true,
+          "video": "outputs/formal-eval/test-43-full/media/libero_goal_3/eval_episode_3.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/3-13-2.jpg",
+          "decoded_frames": 199,
+          "sampled_video_frame_indices": [
+            0,
+            28,
+            57,
+            85,
+            113,
+            141,
+            170,
+            198
+          ]
+        },
+        {
+          "method": "adaptive",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_3/eval_episode_3.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/3-13-3.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": 4,
+      "initial_state": 21,
+      "category": "adaptive_only_failure",
+      "observed_frames": "Full budget visibly lifts the bowl and carries it onto the cabinet. Adaptive approaches the bowl then moves over the cabinet while the bowl remains on the table through late sampled frames.",
+      "interpretation_with_uncertainty": "Adaptive acquisition/transfer failure; the physical cause is not established.",
+      "evidence": [
+        {
+          "method": "full",
+          "success": true,
+          "video": "outputs/formal-eval/test-43-full/media/libero_goal_4/eval_episode_11.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/4-21-4.jpg",
+          "decoded_frames": 98,
+          "sampled_video_frame_indices": [
+            0,
+            14,
+            28,
+            42,
+            55,
+            69,
+            83,
+            97
+          ]
+        },
+        {
+          "method": "adaptive",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_4/eval_episode_11.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/4-21-5.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": 1,
+      "initial_state": 13,
+      "category": "adaptive_recovered",
+      "observed_frames": "Full budget moves the arm toward and past the stove while the bowl stays on the table; the nearby blue package changes orientation. Adaptive visibly lifts the bowl onto the stove and terminates successfully.",
+      "interpretation_with_uncertainty": "Adaptive recovers acquisition/transfer. Incidental object interaction in full budget is visible, but force and precise contact are not resolved.",
+      "evidence": [
+        {
+          "method": "full",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-full/media/libero_goal_1/eval_episode_3.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/1-13-6.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        },
+        {
+          "method": "adaptive",
+          "success": true,
+          "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_1/eval_episode_3.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/1-13-7.jpg",
+          "decoded_frames": 80,
+          "sampled_video_frame_indices": [
+            0,
+            11,
+            23,
+            34,
+            45,
+            56,
+            68,
+            79
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": 2,
+      "initial_state": 21,
+      "category": "adaptive_recovered",
+      "observed_frames": "Full budget initially lifts the bottle toward the cabinet, then returns downward and continues manipulating near the cabinet/table through the cap. Adaptive transports the bottle to the cabinet top and receives success.",
+      "interpretation_with_uncertainty": "Full-budget retention/final-placement difficulty is suggested; the exact final bottle pose is partially occluded and no definite drop mechanism is assigned.",
+      "evidence": [
+        {
+          "method": "full",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-full/media/libero_goal_2/eval_episode_11.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/2-21-8.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        },
+        {
+          "method": "adaptive",
+          "success": true,
+          "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_2/eval_episode_11.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/2-21-9.jpg",
+          "decoded_frames": 141,
+          "sampled_video_frame_indices": [
+            0,
+            20,
+            40,
+            60,
+            80,
+            100,
+            120,
+            140
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": 4,
+      "initial_state": 11,
+      "category": "adaptive_recovered",
+      "observed_frames": "Full budget moves over the cabinet while the bowl remains on the table. Adaptive visibly lifts the bowl and transports it to the cabinet top.",
+      "interpretation_with_uncertainty": "Adaptive recovers an acquisition/transfer failure seen with full budget.",
+      "evidence": [
+        {
+          "method": "full",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-full/media/libero_goal_4/eval_episode_1.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/4-11-10.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        },
+        {
+          "method": "adaptive",
+          "success": true,
+          "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_4/eval_episode_1.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/4-11-11.jpg",
+          "decoded_frames": 91,
+          "sampled_video_frame_indices": [
+            0,
+            13,
+            26,
+            39,
+            51,
+            64,
+            77,
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": 0,
+      "initial_state": 10,
+      "category": "both_failed",
+      "observed_frames": "Both methods approach the cabinet handle and remain close to it through the cap; no clearly completed middle-drawer opening is visible.",
+      "interpretation_with_uncertainty": "Shared drawer-opening failure despite some adaptive early stops; exact handle contact cannot be resolved.",
+      "evidence": [
+        {
+          "method": "full",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-full/media/libero_goal_0/eval_episode_0.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/0-10-12.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        },
+        {
+          "method": "adaptive",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_0/eval_episode_0.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/0-10-13.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": 1,
+      "initial_state": 26,
+      "category": "both_failed",
+      "observed_frames": "Full budget leaves the bowl on the table while the arm travels toward and beyond the stove. Adaptive lifts the bowl and transports it left, but late frames show it beside the stove rather than successfully placed on it.",
+      "interpretation_with_uncertainty": "Different failure stages: full-budget acquisition/transfer versus adaptive final placement. Sampled frames do not establish a precise release mechanism.",
+      "evidence": [
+        {
+          "method": "full",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-full/media/libero_goal_1/eval_episode_16.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/1-26-14.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        },
+        {
+          "method": "adaptive",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_1/eval_episode_16.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/1-26-15.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        }
+      ]
+    },
+    {
+      "task_id": 2,
+      "initial_state": 18,
+      "category": "both_failed",
+      "observed_frames": "Both sequences approach the bottle then move over and around the cabinet, while the bottle remains upright on the table in sampled frames.",
+      "interpretation_with_uncertainty": "Shared acquisition/transfer failure, not solely an adaptive-decoding failure.",
+      "evidence": [
+        {
+          "method": "full",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-full/media/libero_goal_2/eval_episode_8.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/2-18-16.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        },
+        {
+          "method": "adaptive",
+          "success": false,
+          "video": "outputs/formal-eval/test-43-adaptive/media/libero_goal_2/eval_episode_8.mp4",
+          "contact_sheet": "outputs/video-review/test43-paired/2-18-17.jpg",
+          "decoded_frames": 300,
+          "sampled_video_frame_indices": [
+            0,
+            43,
+            85,
+            128,
+            171,
+            214,
+            256,
+            299
+          ]
+        }
+      ]
+    }
+  ]
+}

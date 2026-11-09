@@ -1,0 +1,26 @@
+{
+  "42": {
+    "checkpoint": "outputs/policy-42/selection/step-5000/pretrained_model",
+    "configured_training_seed": 42,
+    "steps": 5000,
+    "sha256": {
+      "model.safetensors": "7eca80a4c27e784a1e593875e667e8667c12196bd393be9e0ce266e8331b9968"
+    }
+  },
+  "43": {
+    "checkpoint": "outputs/policy-43/selection/step-5000/pretrained_model",
+    "configured_training_seed": 43,
+    "steps": 5000,
+    "sha256": {
+      "model.safetensors": "c636bd025f94c9103f7e0d282c2a7c3d61d87344607b62131cfc50b3d2e6d648"
+    }
+  },
+  "44": {
+    "checkpoint": "outputs/policy-44/selection/step-5000/pretrained_model",
+    "configured_training_seed": 44,
+    "steps": 5000,
+    "sha256": {
+      "model.safetensors": "85fd380f748033b471e339faf29a255757301437b8a54c9183b0e57b1c13cc04"
+    }
+  }
+}

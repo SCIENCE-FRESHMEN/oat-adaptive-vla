@@ -1,0 +1,26 @@
+# Private runtime and large upstream artifacts
+.env
+.env.*
+!.env.example
+.ssh/
+*.pem
+*.key
+*.log
+*.tmp
+*.bak
+*.base64
+__pycache__/
+.pytest_cache/
+.venv/
+cache/
+praxis-vla/
+vendor/
+logs/
+*.safetensors
+*.pt
+*.mp4
+results/formal/queued-*
+results/formal/*.state.json
+results/formal/pipeline.lock
+.DS_Store
+Thumbs.db

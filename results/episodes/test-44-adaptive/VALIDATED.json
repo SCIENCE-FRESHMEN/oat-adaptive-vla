@@ -1,0 +1,87 @@
+{
+  "label": "test-44-adaptive",
+  "checkpoint": "outputs/policy-44/selection/step-5000/pretrained_model",
+  "episodes": 300,
+  "success_rate": 0.013333333333333334,
+  "per_task": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.13333333333333333,
+    "8": 0.0,
+    "9": 0.0
+  },
+  "offset": 10,
+  "count": 30,
+  "threshold": 0.01,
+  "budget": null,
+  "environment_seed": 20261102,
+  "GPU": "0",
+  "gpu_signature": "name, uuid, driver_version, memory.total [MiB]\nNVIDIA A100 80GB PCIe, <gpu-instance>, 580.126.20, 81920 MiB\n",
+  "warmup_queries_excluded": 10,
+  "evidence": {
+    "episodes": 300,
+    "queries": 11386,
+    "paired_states_verified": true,
+    "actual_controller_actions_verified": true,
+    "input_observations_verified": true,
+    "videos_required": true
+  },
+  "chunk_decode_ms": {
+    "mean": 1015.8104400470415,
+    "p50": 1028.824151493609,
+    "p95": 1037.0305546093732
+  },
+  "generation_ms": {
+    "mean": 1007.6637084070435,
+    "p50": 1020.8086064085364,
+    "p95": 1028.4799977671355
+  },
+  "prefix_decoder_ms": {
+    "mean": 67.58567870359765,
+    "p50": 68.29774845391512,
+    "p95": 68.87997197918594
+  },
+  "final_decoder_ms": {
+    "mean": 4.825503938440391,
+    "p50": 4.810571204870939,
+    "p95": 4.8629483208060265
+  },
+  "tokens": {
+    "mean": 15.780502812939522,
+    "p50": 16.0,
+    "p95": 16.0
+  },
+  "blocks": {
+    "mean": 15.780502812939522,
+    "p50": 16.0,
+    "p95": 16.0
+  },
+  "vlm_forwards": {
+    "mean": 15.780502812939522,
+    "p50": 16.0,
+    "p95": 16.0
+  },
+  "prefix_decoder_calls": {
+    "mean": 14.821554149085795,
+    "p50": 15.0,
+    "p95": 15.0
+  },
+  "token_histogram": {
+    "16": 10919,
+    "13": 5,
+    "11": 180,
+    "12": 55,
+    "10": 227
+  },
+  "environment_step_ms": {
+    "mean": 14.91184897213524,
+    "p50": 14.25311854109168,
+    "p95": 19.082246022298932
+  },
+  "environment_timing_scope": "physics, controller and camera observations; excludes artifact writes"
+}

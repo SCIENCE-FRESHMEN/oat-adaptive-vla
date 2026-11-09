@@ -1,0 +1,114 @@
+{
+  "status": "DRAFT_INCOMPLETE",
+  "project_complete": false,
+  "paired_experiment_groups": {
+    "test-42-full": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.4266666666666667
+    },
+    "test-42-fixed-short": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.44666666666666666
+    },
+    "test-42-fixed-mid": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.4633333333333333
+    },
+    "test-42-random": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.45666666666666667
+    },
+    "test-42-adaptive": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.4633333333333333
+    },
+    "test-43-full": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.41333333333333333
+    },
+    "test-43-fixed-short": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.4166666666666667
+    },
+    "test-43-fixed-mid": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.39666666666666667
+    },
+    "test-43-random": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.4266666666666667
+    },
+    "test-43-adaptive": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.42333333333333334
+    },
+    "test-44-full": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.0033333333333333335
+    },
+    "test-44-fixed-short": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.03333333333333333
+    },
+    "test-44-fixed-mid": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.013333333333333334
+    },
+    "test-44-random": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.0033333333333333335
+    },
+    "test-44-adaptive": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.013333333333333334
+    },
+    "ablation-reference-full": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.48
+    },
+    "ablation-reference-adaptive": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.44
+    },
+    "ablation-no-gripper": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.45
+    },
+    "ablation-threshold-0.5": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.47
+    },
+    "ablation-threshold-2.0": {
+      "status": "paired_records_exported",
+      "exported_episodes": 300,
+      "success_rate": 0.4633333333333333
+    }
+  },
+  "main_episodes_exported": 4500,
+  "ablation_episodes_exported": 1500,
+  "missing_acceptance_files": [
+    "test44-semantic-failure-review.json"
+  ],
+  "evidence_scope": "Per-episode results and contact sheets (review status is recorded separately); full videos, weights, inputs and action/query traces stay in the private research archive.",
+  "image_note": "Images re-encoded without metadata; original review hashes refer to the private originals. FILES.sha256.json covers published bytes.",
+  "privacy_scope": "Allowlisted text and images; no credentials, host accounts, absolute home/scratch paths, raw logs, caches or upstream source trees."
+}

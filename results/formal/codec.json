@@ -1,0 +1,31 @@
+{
+  "checkpoint": "outputs/codec-audit/step-10000-job-61784407-copy-0",
+  "steps": 10000,
+  "boundaries": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "quality": {
+    "translation_rmse": 0.09235426903791451,
+    "rotation_rmse": 0.03213604147659591,
+    "action_mse": 0.004961022713125983,
+    "gripper_error": 0.0019140625,
+    "action_steps": 51200
+  },
+  "metrics": "results/formal/cpu-codec-prefix-10000.json",
+  "training_device": "cpu float32"
+}
